@@ -7,12 +7,15 @@ import Test from './Test';
 import Profile from './Profile';
 
 function Main() {
-    return (      
-        <Switch>
-            <Route exact path = '/' component = {TasksList} />
-            <Route exact path = '/test' component = {Test} />
-            <Route path = '/profile' component = {Profile} />
-        </Switch>        
+    return ( 
+        <div className='main'>
+            <Switch>
+                <Route exact path = '/' component = {TasksList} />
+                <Route exact path = '/test' component = {Test} />
+                <Route path = '/profile' component = {Profile} />
+            </Switch>
+        </div>     
+                
     )
 }
 

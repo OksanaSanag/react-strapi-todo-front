@@ -1,20 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
+import {APIurl} from 'api';
 import ToDoTaskForm from './ToDoTaskForm';
 import Task from './Task';
 
 import '../../src/styles.css';
 
 function TasksList() {
+    const [ list, setList ] = useState([]);
 
-    const [list, setList] = useState([]);
-
-    useEffect(() => {
-        const urlAPI = 'http://localhost:1337/tasks';
+    useEffect(() => { 
+        const urlAPI = APIurl; console.log(urlAPI, 'urlAPI');
+        
         axios.get(urlAPI).then((resp) => {
             const allTasks = resp.data;
-            setList(allTasks);
+            setList(allTasks); 
         });        
     }, []);
 
@@ -35,9 +36,9 @@ function TasksList() {
     };
 
 
-    const doSort = (data) => {
+    // const doSort = (data) => {
 
-    }
+    // }
 
     const listView = list.map(item => {
         return <li key={item.id}><Task task={item} updateListUfterChange={updateListUfterChange} updateListAfterDelete={updateListAfterDelete} /></li>

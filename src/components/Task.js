@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import api from 'api';
 // import Cross from '../images/cross.png';
 // import Pencil from '../images/pencil.png';
@@ -11,8 +11,8 @@ import { faTimes, faPencilAlt, faCheck } from '@fortawesome/free-solid-svg-icons
 function Task(props) {
     const { task, updateListUfterChange, updateListAfterDelete } = props;
     const { id, description } = task; 
-    const [isEdit, setIsEdit] = useState(false);
-    const [_description, setDescription] = useState(description || '');
+    const [ isEdit, setIsEdit ] = useState(false);
+    const [ _description, setDescription ] = useState(description || '');
 
     const toggleEdit = () => setIsEdit(!isEdit);
     
@@ -53,7 +53,7 @@ function Task(props) {
                     <div className='row actions'>
                         <button type='submit' onClick = { editChanges } >< FontAwesomeIcon icon={faCheck} /></button>
                         <button className='margin-left-10'>
-                            <Link to='/'> Cancel </Link>
+                            {/* <Link to='/'> Cancel </Link>  доробити   */}
                         </button>
                     </div>
 

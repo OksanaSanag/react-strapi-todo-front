@@ -7,7 +7,7 @@ import Icon from '../images/icon.svg'
 
 function Header() {
     return (
-        <div className="header">
+        <div className='header'>
             <div className='header-leftBlock'> 
                 <div>{Icon && <img src={Icon} className="header-Icon" alt="Icon" />}</div>
                 <div><NavLink to='/'> Task list </NavLink> </div> 
